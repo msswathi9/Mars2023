@@ -1,7 +1,6 @@
 using Mars2023.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System;
 using TechTalk.SpecFlow;
 
@@ -14,22 +13,11 @@ namespace Mars2023.StepDefinition
 
         Loginpage logInPageobj = new Loginpage();
         ProfilePage profilePageobj = new ProfilePage();
-
         [Given(@"I logged into mars portal successfully")]
         public void GivenILoggedIntoMarsPortalSuccessfully()
         {
-            //open chrome browser
-            driver = new ChromeDriver();
-
             //Login Page object initialization and defination
-            logInPageobj.loginActions(driver);
-        }
-
-        [When(@"I navigated to the skill page")]
-        public void WhenINavigatedToTheSkillPage()
-        {
-            
-            profilePageobj.Skills(driver);
+            logInPageobj.loginActions(driver); 
         }
 
         [When(@"I added skill to my Profile")]
@@ -46,12 +34,6 @@ namespace Mars2023.StepDefinition
 
             string newChooseSkill = profilePageobj.GetChooseSkill(driver);
             Assert.That(newChooseSkill == "Beginner", "Actual choose skill and expected choose skill do not match");
-        }
-        [When(@"I navigated to the education page")]
-        public void WhenINavigatedToTheEducationPage()
-        {
-            ProfilePage profilePageobj = new ProfilePage();
-            profilePageobj.Education(driver);
         }
         [When(@"I added education to my Profile")]
         public void WhenIAddedEducationToMyProfile()
@@ -76,19 +58,11 @@ namespace Mars2023.StepDefinition
             string newYearofGraduation = profilePageobj.GetYearofGraduation(driver);
             Assert.That(newYearofGraduation == "2010", "Actual year of graduation and expected Actual year of graduation do not match");
         }
-
-        [When(@"I navigated to the certification page")]
-        public void WhenINavigatedToTheCertificationPage()
-        {
-            profilePageobj.Certifications(driver);
-        }
-
         [When(@"I added certification to my Profile")]
         public void WhenIAddedCertificationToMyProfile()
         {
             profilePageobj.Certifications(driver);
         }
-
         [Then(@"The certification should be added successfully")]
         public void ThenTheCertificationShouldBeAddedSuccessfully()
         {
@@ -101,7 +75,28 @@ namespace Mars2023.StepDefinition
             string newYear = profilePageobj.Getyear(driver);
             Assert.That(newYear == "2011", "Actual year and expected year do not match");
         }
+        [When(@"I added description to my profile")]
+        public void WhenIAddedDescriptionToMyProfile()
+        {
+            profilePageobj.AddDescription(driver);
+        }
+        [Then(@"The description should added successfully")]
+        public void ThenTheDescriptionShouldAddedSuccessfully()
+        {
+            string newDescription = profilePageobj.GetDescription(driver);
+            Assert.That(newDescription == "Swathi Shetty", "Actual description and expected description do not match");
+        }
+
+        [When(@"I added my setails to share skill page")]
+        public void WhenIAddedMySetailsToShareSkillPage()
+        {
+            profilePageobj.ShareSkill(driver);
+        }
+        [Then(@"The share skill should be added successfully")]
+        public void ThenTheShareSkillShouldBeAddedSuccessfully()
+        {
+            throw new PendingStepException();
+        }
 
     }
 }
- 
