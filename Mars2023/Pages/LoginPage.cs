@@ -14,7 +14,7 @@ namespace Mars2023.Pages
         {
 
             //Open chrome Browser
-            driver = new ChromeDriver();
+           // driver = new ChromeDriver();
 
             driver.Manage().Window.Maximize();
 

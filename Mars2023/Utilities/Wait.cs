@@ -12,8 +12,8 @@ namespace Mars2023.Commondriver
     {
         public static void WaittobeClickable(IWebDriver driver, string locatertype, string locatervalue, int seconds)
         {
-           var Wait = new WebDriverWait(driver, new TimeSpan(0, 0, seconds));
-              if (locatertype == "Xpath")
+            var Wait = new WebDriverWait(driver, new TimeSpan(0, 0, seconds));
+            if (locatertype == "Xpath")
             {
                Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath(locatervalue)));
             }

@@ -75,44 +75,14 @@ namespace Mars2023.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Want to add skills to my profile")]
+        [NUnit.Framework.DescriptionAttribute("1) Want to add education to my profile")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        public void WantToAddSkillsToMyProfile()
+        public void _1WantToAddEducationToMyProfile()
         {
             string[] tagsOfScenario = new string[] {
                     "tag1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Want to add skills to my profile", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 8
-   testRunner.Given("I logged into mars portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 9
-   testRunner.When("I added skill to my Profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 10
-   testRunner.Then("The skill should be added successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Want to add education to my profile")]
-        public void WantToAddEducationToMyProfile()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Want to add education to my profile", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1) Want to add education to my profile", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -137,12 +107,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Want to add certification to my profile")]
-        public void WantToAddCertificationToMyProfile()
+        [NUnit.Framework.DescriptionAttribute("2) Want to update existing education record")]
+        public void _2WantToUpdateExistingEducationRecord()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Want to add certification to my profile", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2) Want to update existing education record", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -154,26 +124,26 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 18
-   testRunner.Given("I logged into mars portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("I logged into mars portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 19
-   testRunner.When("I added certification to my Profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("I Want to update existing Education record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
-   testRunner.Then("The certification should be added successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("The record should be updated succesully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Want to add description to my profile")]
-        public void WantToAddDescriptionToMyProfile()
+        [NUnit.Framework.DescriptionAttribute("3) Want to delete education record")]
+        public void _3WantToDeleteEducationRecord()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Want to add description to my profile", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 22
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3) Want to delete education record", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -183,44 +153,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 23
-  testRunner.Given("I logged into mars portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 24
-  testRunner.When("I added description to my profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.Given("I logged into mars portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 25
-  testRunner.Then("The description should added successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.When("I Want to delte existing Education record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Want to add add my details to Share skills page")]
-        public void WantToAddAddMyDetailsToShareSkillsPage()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Want to add add my details to Share skills page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 27
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 28
-  testRunner.Given("I logged into mars portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 29
-  testRunner.When("I added my setails to share skill page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 30
-  testRunner.Then("The share skill should be added successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 26
+  testRunner.Then("The record should be deleted succesully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

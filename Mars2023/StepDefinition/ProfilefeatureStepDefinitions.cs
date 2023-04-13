@@ -1,40 +1,28 @@
 using Mars2023.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using TechTalk.SpecFlow;
 
 namespace Mars2023.StepDefinition
 {
     [Binding]
+
     public class ProfilefeatureStepDefinitions
     {
-        public IWebDriver driver;
+        public IWebDriver driver = new ChromeDriver();
 
         Loginpage logInPageobj = new Loginpage();
         ProfilePage profilePageobj = new ProfilePage();
         [Given(@"I logged into mars portal successfully")]
+        [BeforeScenario]
         public void GivenILoggedIntoMarsPortalSuccessfully()
         {
             //Login Page object initialization and defination
-            logInPageobj.loginActions(driver); 
+            logInPageobj.loginActions(driver);
         }
 
-        [When(@"I added skill to my Profile")]
-        public void WhenIAddedSkillToMyProfile()
-        {
-            profilePageobj.Skills(driver);
-        }
-
-        [Then(@"The skill should be added successfully")]
-        public void ThenTheSkillShouldBeAddedSuccessfully()
-        {
-            string newAddSkill = profilePageobj.GetAddSkill(driver);
-            Assert.That(newAddSkill == "Automation", "Actual add skill and expected add skill do not match");
-
-            string newChooseSkill = profilePageobj.GetChooseSkill(driver);
-            Assert.That(newChooseSkill == "Beginner", "Actual choose skill and expected choose skill do not match");
-        }
         [When(@"I added education to my Profile")]
         public void WhenIAddedEducationToMyProfile()
         {
@@ -43,60 +31,39 @@ namespace Mars2023.StepDefinition
         [Then(@"The education should be added successfully")]
         public void ThenTheEducationShouldBeAddedSuccessfully()
         {
-            string newCollage = profilePageobj.GetCollage(driver);
-            Assert.That(newCollage == "hjdjf", "Actual collage and expected collage do not match");
-
-            string newCountryofcollage = profilePageobj.GetCountryofcollage(driver);
-            Assert.That(newCountryofcollage == "India", "Actual country of collage and expected country of collage do not match");
-
-            string newTitle = profilePageobj.GetTitle(driver);
-            Assert.That(newTitle == "M.B.A", "Actual Title and expected Title do not match");
-
-            string newDegree = profilePageobj.GetDegree(driver);
-            Assert.That(newDegree == "Post Graduation", "Actual degree and expected degree do not match");
-
-            string newYearofGraduation = profilePageobj.GetYearofGraduation(driver);
-            Assert.That(newYearofGraduation == "2010", "Actual year of graduation and expected Actual year of graduation do not match");
+            string neweucationRecord = profilePageobj.GetAlertWindow(driver);
+            Assert.That(neweucationRecord == "Education has been added", "Failed to add education record");
         }
-        [When(@"I added certification to my Profile")]
-        public void WhenIAddedCertificationToMyProfile()
+        [When(@"I Want to update existing Education record")]
+        public void WhenIWantToUpdateExistingEducationRecord()
         {
-            profilePageobj.Certifications(driver);
-        }
-        [Then(@"The certification should be added successfully")]
-        public void ThenTheCertificationShouldBeAddedSuccessfully()
-        {
-            string newCertification = profilePageobj.GetCertifications(driver);
-            Assert.That(newCertification == "ISTQB", "Actual certification and expected certification do not Match");
+            profilePageobj.Editeducation(driver);
 
-            string newCertificationFrom = profilePageobj.GetcertificateFrom(driver);
-            Assert.That(newCertificationFrom == "ISTQB", "Actual certification ffom and expected certification from do not Match");
-
-            string newYear = profilePageobj.Getyear(driver);
-            Assert.That(newYear == "2011", "Actual year and expected year do not match");
         }
-        [When(@"I added description to my profile")]
-        public void WhenIAddedDescriptionToMyProfile()
+        [Then(@"The record should be updated succesully")]
+        public void ThenTheRecordShouldBeUpdatedSuccesully()
         {
-            profilePageobj.AddDescription(driver);
+            string editedrecord = profilePageobj.GetAlertWindow(driver);
+            Assert.That(editedrecord == "Education as been updated", "Failed to update education record");
+           
         }
-        [Then(@"The description should added successfully")]
-        public void ThenTheDescriptionShouldAddedSuccessfully()
+        [When(@"I Want to delte existing Education record")]
+        public void WhenIWantToDelteExistingEducationRecord()
         {
-            string newDescription = profilePageobj.GetDescription(driver);
-            Assert.That(newDescription == "Swathi Shetty", "Actual description and expected description do not match");
+            profilePageobj.DeleteEducationrecord(driver);
+        }
+        [Then(@"The record should be deleted succesully")]
+        public void ThenTheRecordShouldBeDeletedSuccesully()
+        {
+            string deleteEducationRecord = profilePageobj.GetAlertWindow(driver);
+            Assert.That(deleteEducationRecord == "Education entry successfully removed", "Failed to delete education record");
         }
 
-        [When(@"I added my setails to share skill page")]
-        public void WhenIAddedMySetailsToShareSkillPage()
+        [AfterScenario]
+        public void tearDown()
         {
-            profilePageobj.ShareSkill(driver);
+            driver.Quit();
         }
-        [Then(@"The share skill should be added successfully")]
-        public void ThenTheShareSkillShouldBeAddedSuccessfully()
-        {
-            throw new PendingStepException();
-        }
-
     }
+
 }
