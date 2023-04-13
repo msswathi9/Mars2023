@@ -145,7 +145,7 @@ namespace Mars2023.Pages
         public string GetAlertWindow(IWebDriver driver)
         {
             Thread.Sleep(2000);
-            //Wait.WaittobeClickable(driver, "Csselector", "body > div.ns-box.ns-growl.ns-effect-jelly.ns-type-success.ns-show", 5);
+            //Wait.WaittobeClickable(driver, "XPath", "/html/body/div[1]", 5);
             IWebElement alertWindow = driver.FindElement(By.XPath("/html/body/div[1]"));
             return alertWindow.Text;
         }
