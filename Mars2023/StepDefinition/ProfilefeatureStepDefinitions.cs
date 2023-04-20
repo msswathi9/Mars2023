@@ -1,4 +1,5 @@
 using Mars2023.Pages;
+using Mars2023.Utilities;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -9,24 +10,37 @@ namespace Mars2023.StepDefinition
 {
     [Binding]
 
-    public class ProfilefeatureStepDefinitions
-    {
-        public IWebDriver driver = new ChromeDriver();
-
+    public class ProfilefeatureStepDefinitions : CommonDriver
+    {    
+       // public ProfilefeatureStepDefinitions(IWebDriver driver)
+        //{
+          //  this.driver = driver;
+        //}
         Loginpage logInPageobj = new Loginpage();
         ProfilePage profilePageobj = new ProfilePage();
         [Given(@"I logged into mars portal successfully")]
         [BeforeScenario]
         public void GivenILoggedIntoMarsPortalSuccessfully()
         {
+            driver = new ChromeDriver();
             //Login Page object initialization and defination
             logInPageobj.loginActions(driver);
+            logInPageobj.SigninButton(driver);
+            logInPageobj.UserTextBox(driver);
+            logInPageobj.PasswordTextBox(driver);
+            logInPageobj.LogInButton(driver);
         }
 
         [When(@"I added education to my Profile")]
         public void WhenIAddedEducationToMyProfile()
         {
-            profilePageobj.Education(driver);
+            profilePageobj.GotoEducation(driver);
+            profilePageobj.AddCollage(driver);
+            profilePageobj.SelectCountryOfCollage(driver);          
+            profilePageobj.SelectTitle(driver);
+            profilePageobj.AddDegree(driver);
+            profilePageobj.SelectYearofGraduation(driver);
+
         }
         [Then(@"The education should be added successfully")]
         public void ThenTheEducationShouldBeAddedSuccessfully()
@@ -37,7 +51,14 @@ namespace Mars2023.StepDefinition
         [When(@"I Want to update existing Education record")]
         public void WhenIWantToUpdateExistingEducationRecord()
         {
-            profilePageobj.Editeducation(driver);
+            profilePageobj.GotoEducation(driver);
+            profilePageobj.EditRecordIcon(driver);
+            profilePageobj.EditCollageTextBox(driver);
+            profilePageobj.EditCountryDropdown(driver);
+            profilePageobj.EditTitleDropDown(driver);
+            profilePageobj.EditDegreeTextBox(driver);
+            profilePageobj.EditYearofGraduation(driver);
+            
 
         }
         [Then(@"The record should be updated succesully")]
