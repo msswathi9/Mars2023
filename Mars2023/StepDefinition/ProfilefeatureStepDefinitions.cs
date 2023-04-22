@@ -22,7 +22,7 @@ namespace Mars2023.StepDefinition
         [BeforeScenario]
         public void GivenILoggedIntoMarsPortalSuccessfully()
         {
-            driver = new ChromeDriver();
+            //driver = new ChromeDriver();
             //Login Page object initialization and defination
             logInPageobj.loginActions(driver);
             logInPageobj.SigninButton(driver);
@@ -35,11 +35,13 @@ namespace Mars2023.StepDefinition
         public void WhenIAddedEducationToMyProfile()
         {
             profilePageobj.GotoEducation(driver);
+            profilePageobj.ClickAddNewButton(driver);
             profilePageobj.AddCollage(driver);
             profilePageobj.SelectCountryOfCollage(driver);          
             profilePageobj.SelectTitle(driver);
             profilePageobj.AddDegree(driver);
             profilePageobj.SelectYearofGraduation(driver);
+            profilePageobj.Addbutton(driver);
 
         }
         [Then(@"The education should be added successfully")]
@@ -58,6 +60,7 @@ namespace Mars2023.StepDefinition
             profilePageobj.EditTitleDropDown(driver);
             profilePageobj.EditDegreeTextBox(driver);
             profilePageobj.EditYearofGraduation(driver);
+            profilePageobj.UpdateButton(driver);
             
 
         }
@@ -71,6 +74,7 @@ namespace Mars2023.StepDefinition
         [When(@"I Want to delte existing Education record")]
         public void WhenIWantToDelteExistingEducationRecord()
         {
+            profilePageobj.GotoEducation(driver);
             profilePageobj.DeleteEducationrecord(driver);
         }
         [Then(@"The record should be deleted succesully")]
@@ -85,6 +89,7 @@ namespace Mars2023.StepDefinition
         {
             driver.Quit();
         }
+
     }
 
 }

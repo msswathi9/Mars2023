@@ -13,23 +13,24 @@ namespace Mars2023.Utilities
    
         public class CommonDriver
         {
-            public IWebDriver driver;
-            [SetUp]
-            public void LoginSteps()
-            {
-                driver = new ChromeDriver();
+        public static IWebDriver driver = new ChromeDriver();
+        //[SetUp]
+        //public void LoginSteps()
+        //{
+        //    driver = new ChromeDriver();
 
-                // Login Page object initialization and defination
-                Loginpage logInPageobj = new Loginpage(driver);
-                logInPageobj.loginActions(driver);
+        //    Login Page object initialization and defination
+        //     Loginpage logInPageobj = new Loginpage();
 
-            }
-            [TearDown]
-            public void CloseTestRun()
-            {
-                driver.Quit();
-            }
-        }
+        //    logInPageobj.loginActions(driver);
+
+        //}
+        //[TearDown]
+        //public void CloseTestRun()
+        //{
+        //    driver.Quit();
+        //}
+    }
 }
 
 

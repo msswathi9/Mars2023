@@ -56,9 +56,10 @@ namespace Mars2023.Pages
             locationType.Click();
 
             //Identify start date and select
-            //IWebElement startDate = driver.FindElement(By.XPath(""))
+            IWebElement startDate = driver.FindElement(By.XPath("//*[@id=\"service-listing-section\"]/div[2]/div/form/div[7]/div[2]/div/div[1]/div[2]/input"));
+            startDate.Click();
 
-
+            //Identify end date and select
 
 
 
