@@ -12,7 +12,7 @@ using Mars2023.Utilities;
 
 namespace Mars2023.Pages
 {
-    public class ProfilePage : CommonDriver
+    public class ProfilePage 
     {
 
         //IWebDriver driver;
@@ -26,149 +26,149 @@ namespace Mars2023.Pages
         //}
 
         //Create education crecord element xpaths
-        private IWebElement educationpage => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]"));
-       private IWebElement addNewbutton => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/thead/tr/th[6]/div"));
+        private static IWebElement educationpage => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]"));
+       private static IWebElement addNewbutton => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/thead/tr/th[6]/div"));
         
-        private IWebElement collageTextBox => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[1]/input"));
+        private static IWebElement collageTextBox => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[1]/input"));
 
-        private IWebElement countryOfCollageDropdown => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[2]/select"));
+        private static IWebElement countryOfCollageDropdown => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[2]/select"));
 
-        private IWebElement titleDropDownbox => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[1]/select"));
-        private IWebElement degreeTextBox => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[2]/input"));
+        private static IWebElement titleDropDownbox => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[1]/select"));
+        private static IWebElement degreeTextBox => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[2]/input"));
 
-        private IWebElement yearOfGraduationdropdown => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[3]/select"));
+        private static IWebElement yearOfGraduationdropdown => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[3]/select"));
 
-        private IWebElement addButton => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[3]/div/input[1]"));
+        private static IWebElement addButton => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[3]/div/input[1]"));
 
         //Edit education record elements xpaths
 
-        private IWebElement editButton => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[1]/i"));
-        private IWebElement editCollageName => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[1]/div[1]/input"));
+        private static IWebElement editButton => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[1]/i"));
+        private static IWebElement editCollageName => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[1]/div[1]/input"));
 
-        private IWebElement editCountryDropdown => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[1]/div[2]/select"));
+        private static IWebElement editCountryDropdown => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[1]/div[2]/select"));
 
-        private IWebElement editTitleDropdown => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[1]/select"));
+        private static IWebElement editTitleDropdown => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[1]/select"));
 
-        private IWebElement editDegreeTextbox => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[2]/input"));
+        private static IWebElement editDegreeTextbox => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[2]/input"));
 
-        private IWebElement editYearOfGraduation => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[3]/select"));
+        private static IWebElement editYearOfGraduation => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[3]/select"));
 
-        private IWebElement updateButton => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[3]/input[1]"));
+        private static IWebElement updateButton => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[3]/input[1]"));
 
-        private IWebElement deleteButton => driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[2]/i"));
+        private static IWebElement deleteButton => CommonDriver.driver.FindElement(By.XPath("//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[2]/i"));
 
-        private IWebElement alertWindow => driver.FindElement(By.XPath("/html/body/div[1]"));
+        private static IWebElement alertWindow => CommonDriver.driver.FindElement(By.XPath("/html/body/div[1]"));
 
-        public void GotoEducation(IWebDriver driver)
+        public static void GotoEducation()
         {
             //Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]", 5);
             Thread.Sleep(2000);
              educationpage.Click();
         }
-        public void ClickAddNewButton(IWebDriver driver)
+        public static void ClickAddNewButton()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/thead/tr/th[6]/div", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/thead/tr/th[6]/div", 5);
             Thread.Sleep(2000);
             addNewbutton.Click();
         }
-        public void AddCollage(IWebDriver driver)
+        public static void AddCollage()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[1]/input", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[1]/input", 5);
             collageTextBox.Click();
             collageTextBox.SendKeys("hjdjf");
         }
-        public void SelectCountryOfCollage(IWebDriver driver)
+        public static void SelectCountryOfCollage()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[2]/select", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[2]/select", 5);
             countryOfCollageDropdown.Click();
 
             //select country
             SelectElement element = new SelectElement(countryOfCollageDropdown);
             element.SelectByValue("India");
         }
-        public void SelectTitle(IWebDriver driver)
+        public static void SelectTitle()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[1]/select", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[1]/select", 5);
             titleDropDownbox.Click();
             SelectElement element1 = new SelectElement(titleDropDownbox);
             element1.SelectByValue("B.Sc");
         }
-        public void AddDegree(IWebDriver driver)
+        public static void AddDegree()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[2]/input", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[2]/input", 5);
             degreeTextBox.SendKeys("Bachelor's Degree");
         }
 
-        public void SelectYearofGraduation(IWebDriver driver)
+        public static void SelectYearofGraduation()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[3]/select", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[3]/select", 5);
             yearOfGraduationdropdown.Click();
             SelectElement element2 = new SelectElement(yearOfGraduationdropdown);
             element2.SelectByValue("2008");
         }
-        public void Addbutton(IWebDriver driver)
+        public static void Addbutton()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[3]/div/input[1]", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[3]/div/input[1]", 5);
             addButton.Click();
         }      
-        public void EditRecordIcon(IWebDriver driver)
+        public static void EditRecordIcon()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[1]/i", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[1]/i", 5);
             editButton.Click();
         }
-        public void EditCollageTextBox(IWebDriver driver)
+        public static void EditCollageTextBox()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[1]/div[1]/input", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[1]/div[1]/input", 5);
             editCollageName.Clear();
             editCollageName.SendKeys("fdhfh");
         }
-        public void EditCountryDropdown(IWebDriver driver)
+        public static void EditCountryDropdown()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[1]/div[2]/select", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[1]/div[2]/select", 5);
             editCountryDropdown.Click();
             SelectElement element = new SelectElement(editCountryDropdown);
             element.SelectByValue("Australia");
         }
-        public void EditTitleDropDown(IWebDriver driver)
+        public static void EditTitleDropDown()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[1]/select", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[1]/select", 5);
             editTitleDropdown.Click();
             SelectElement element1 = new SelectElement(editTitleDropdown);
             element1.SelectByValue("M.B.A");
         }
-        public void EditDegreeTextBox(IWebDriver driver)
+        public static void EditDegreeTextBox()
         {
 
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[2]/input", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[2]/input", 5);
             editDegreeTextbox.Clear();
             editDegreeTextbox.SendKeys("Master's Degree");
         }
-        public void EditYearofGraduation(IWebDriver driver)
+        public static void EditYearofGraduation()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[3]/select", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[2]/div[3]/select", 5);
             editYearOfGraduation.Click();
             SelectElement element3 = new SelectElement(editYearOfGraduation);
             element3.SelectByValue("2010");
         }
-        public void UpdateButton(IWebDriver driver)
+        public static void UpdateButton()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[3]/input[1]", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[3]/input[1]", 5);
             updateButton.Click();
         }
         
 
-        public void DeleteEducationrecord(IWebDriver driver)
+        public static void DeleteEducationrecord()
         {
-            Wait.WaittobeClickable(driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[2]/i", 5);
+            Wait.WaittobeClickable(CommonDriver.driver, "Xpath", "//div[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[2]/i", 5);
             Thread.Sleep(3000);
             //Identify delete button and click    
             deleteButton.Click();
         }
-        public string GetAlertWindow(IWebDriver driver)
+        public static string GetAlertWindow()
         {
            
             Thread.Sleep(2000);
-            //Wait.WaittobeClickable(driver, "XPath", "/html/body/div[1]", 5);
+            //Wait.WaittobeClickable(CommonDriver.driver, "XPath", "/html/body/div[1]", 5);
             
             return alertWindow.Text;
         }
