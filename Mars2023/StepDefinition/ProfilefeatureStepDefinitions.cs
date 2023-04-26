@@ -16,17 +16,16 @@ namespace Mars2023.StepDefinition
         //{
         //  this.driver = driver;
         //}
-        Loginpage logInPageobj;
-        ProfilePage profilePageobj; 
-        public ProfilefeatureStepDefinitions()
-        {
-            logInPageobj = new Loginpage();
-             profilePageobj = new ProfilePage();
+        
+        
+            Loginpage logInPageobj = new Loginpage();
+            ProfilePage profilePageobj = new ProfilePage();
+             
 
-        }
+        
        
         [Given(@"I logged into mars portal successfully")]
-        [BeforeScenario]
+        //[BeforeScenario]
         public void GivenILoggedIntoMarsPortalSuccessfully()
         {
             //driver = new ChromeDriver();
